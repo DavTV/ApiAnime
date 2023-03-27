@@ -13,6 +13,8 @@ export default function App() {
   useEffect(() => {
     document.body.className = "bg-light";
   }, []);
+
+ 
   return (
     <div className="App">
       <div className={switchBtn ? " p-2 " : "p-2  text-white "}>
@@ -23,6 +25,7 @@ export default function App() {
             switchBtn={switchBtn}
             setData={setData}
             setLoading={setLoading}
+            loading={loading}
             setMensaje={setMensaje}
           />
           <Catalogo

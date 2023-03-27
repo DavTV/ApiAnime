@@ -1,14 +1,12 @@
-// import { useState } from "react";
+import { useEffect } from "react";
 import ReactDOM from "react-dom";
 import "../css/bootstrap.min.css";
 
-const PortalModal = ({ dataModal, setDataModal, isOpen, handleShowBtn }) => {
-  if (isOpen) {
-    setDataModal({});
-  }
+const PortalModal = ({ dataModal, isOpen, handleShowBtn }) => {
+ 
   return ReactDOM.createPortal(
     <div className={isOpen ? "modal-portal toggle-modal" : "modal-portal"}>
-      <div className="bg-light w-75 rounded shadow p-4">
+      <div className="bg-light w-75 rounded shadow p-4 scroll">
         <div className="d-flex justify-content-between ">
           <h2 className="m-0">{dataModal.title}</h2>
           <button
@@ -39,8 +37,9 @@ const PortalModal = ({ dataModal, setDataModal, isOpen, handleShowBtn }) => {
                         type="button"
                         class="list-group-item list-group-item-action"
                       >
-                        {" "}
-                        {ge.name}{" "}
+                     
+                      {console.log(ge,"ge")}
+                      categoría
                       </button>
                     );
                   })}

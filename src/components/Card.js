@@ -14,21 +14,14 @@ const Card = ({
           <img src={imagen} alt={name} className="w-100" />
           <div className="p-2">
             <p className="fw-bold">{name}</p>
-            {/* <details>
-              <summary>Sinopsis</summary>
-              <div className="sinopsis">
-                <small>{synopsis || "No hay descripción disponible"}</small>
-              </div>
-            </details> */}
+          
             <button
               className={
                 switchBtn
                   ? "btn btn-danger my-2 w-100"
                   : " my-2 w-100 btn btn-success"
               }
-              data-trailer={trailerUrl}
-              data-name={name}
-              data-synopsis={synopsis}
+        
               data-id={id}
               onClick={handleShowBtn}
             >

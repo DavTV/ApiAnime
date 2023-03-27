@@ -5,24 +5,26 @@ const Catalogo = ({ data, loading, mensaje, switchBtn }) => {
   const [isOpen, setIsOpen] = useState(true);
 
   const [dataModal, setDataModal] = useState({});
+// console.log(mensaje)
   const handleShowBtn = (e) => {
     setIsOpen(!isOpen);
 
     let idCard = e.target.getAttribute("data-id");
 
     if (idCard) {
-      let dataCard = data.find((el) => (el.mal_id = idCard));
-      console.log(dataCard);
-
-      setDataModal({
+      let dataCard = data.find((el) => (el.mal_id == idCard));
+      console.log(dataCard);  
+      let newDataCard= {
         title: dataCard.title,
         synopsis: dataCard.synopsis,
         category: dataCard.genres,
         image: dataCard.images.webp.image_url,
         duration: dataCard.duration
-      });
-      console.log(dataModal);
+      }
+      
+      setDataModal(newDataCard);
     }
+   
   };
   return (
     <div className="row">
@@ -33,7 +35,7 @@ const Catalogo = ({ data, loading, mensaje, switchBtn }) => {
           // console.log(el);
           return (
             <Card
-              key={el.mal_id}
+              key={el.mal_id+"key"}
               id={el.mal_id}
               name={el.title}
               imagen={el.images.webp.image_url}
@@ -41,7 +43,7 @@ const Catalogo = ({ data, loading, mensaje, switchBtn }) => {
               switchBtn={switchBtn}
               trailerUrl={el.trailer.embed_url}
               handleShowBtn={handleShowBtn}
-              setDataModal={setDataModal}
+              // setDataModal={setDataModal}
               // setUrl={setUrl}
               // setNameAnime={setNameAnime}
             />
@@ -57,7 +59,7 @@ const Catalogo = ({ data, loading, mensaje, switchBtn }) => {
         handleShowBtn={handleShowBtn}
         // nameAnime={nameAnime}
         dataModal={dataModal}
-        setDataModal={setDataModal}
+        // setDataModal={setDataModal}
       />
     </div>
   );
