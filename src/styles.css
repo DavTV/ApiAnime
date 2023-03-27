@@ -1,0 +1,49 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  /* height: 100vh; */
+}
+.card img {
+  object-fit: cover;
+  height: 300px;
+  object-position: top;
+}
+@media (min-width: 700px) {
+  .card img {
+    height: 400px;
+    object-position: top;
+  }
+}
+.sinopsis {
+  max-height: 300px;
+  overflow-y: auto;
+}
+.float {
+  position: fixed;
+  cursor: pointer;
+  z-index: 100;
+  right: 20px;
+  bottom: 20px;
+}
+.container {
+  /* position: relative; */
+  /* height: 100%; */
+  /* height: 100vh; */
+}
+.modal-portal {
+  background-color: rgba(0, 0, 10, 0.4);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+  z-index: 1000;
+}
+.toggle-modal {
+  opacity: 0;
+  visibility: hidden;
+}
