@@ -6,7 +6,7 @@ const Catalogo = ({ data, loading, mensaje, switchBtn }) => {
   const [dataModal, setDataModal] = useState({});
   const handleShowBtn = (e) => {
     setIsOpen(!isOpen);
-
+// ooooa
     let idCard = e.target.getAttribute("data-id");
 
     if (idCard) {
