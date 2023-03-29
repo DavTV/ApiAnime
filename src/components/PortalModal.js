@@ -17,43 +17,49 @@ const PortalModal = ({ dataModal, isOpen, handleShowBtn }) => {
         <div className="row">
           <div className="col-12">
             <h2>Sinopsis</h2>
-            <div className="sinopsis">
+            <div className="sinopsis my-4">
               <p>{dataModal.synopsis || "No hay descripción disponible"}</p>
             </div>
             <div className="row">
-              <div class="list-group col-6">
+              <div className="list-group col-6">
                 <button
                   type="button"
-                  class="list-group-item list-group-item-action active"
+                  className="list-group-item list-group-item-action active"
                   aria-current="true"
                 >
                   Categorías
                 </button>
 
-                {dataModal.category &&
-                  dataModal.category.map((ge) => {
+                {dataModal.category ?
+                  dataModal.category.map((ge,index) => {
                     return (
-                      <button
+                      <button key={index+ge}
                         type="button"
-                        class="list-group-item list-group-item-action"
+                        className="list-group-item list-group-item-action"
                       >
                      
-                      {console.log(ge,"ge")}
-                      categoría
+                      {ge.name}
                       </button>
                     );
-                  })}
+                  }):
+                  <button
+                  type="button"
+                  className="list-group-item list-group-item-action"
+                >No hay categorías disponibles</button>
+                  
+                  }
 
-                <p className="my-3">{dataModal.duration}</p>
+                <p className="my-3"><span className="fw-bold">Duración por eposodio:</span> {dataModal.duration}</p>
+                <p className="my-3"><a href={dataModal.linkweb}><span className="fw-bold">Link a web</span></a> </p>
               </div>
               <div className="col-6">
                 <img
                   src={dataModal.image || ""}
                   alt="Imagen de anime"
-                  className="w-100"
+                  className="w-100 img-modal"
                 />
                 {/* <p>{dataModal.images || ""}</p> */}
-                este es el error- 27/3/23
+                {/* este es el error- 27/3/23 */}
               </div>
             </div>
           </div>

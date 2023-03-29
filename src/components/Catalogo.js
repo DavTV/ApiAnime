@@ -3,9 +3,7 @@ import Card from "./Card";
 import PortalModal from "./PortalModal";
 const Catalogo = ({ data, loading, mensaje, switchBtn }) => {
   const [isOpen, setIsOpen] = useState(true);
-
   const [dataModal, setDataModal] = useState({});
-// console.log(mensaje)
   const handleShowBtn = (e) => {
     setIsOpen(!isOpen);
 
@@ -19,7 +17,8 @@ const Catalogo = ({ data, loading, mensaje, switchBtn }) => {
         synopsis: dataCard.synopsis,
         category: dataCard.genres,
         image: dataCard.images.webp.image_url,
-        duration: dataCard.duration
+        duration: dataCard.duration,
+        linkweb:dataCard.url
       }
       
       setDataModal(newDataCard);

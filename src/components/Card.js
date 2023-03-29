@@ -2,9 +2,7 @@ const Card = ({
   id,
   name,
   imagen,
-  synopsis,
   switchBtn,
-  trailerUrl,
   handleShowBtn
 }) => {
   return (

@@ -10,14 +10,15 @@ export const useForm = (setLoading, setData, setMensaje) => {
     try {
       const respose = await fetch(url);
 
-      if (respose.status == 200) {
-        const data = await respose.json();
-        setData(data.data);
-        setLoading(false);
-        if (data.data.length < 1) setMensaje("Anime no encontrado.");
+      if (respose.status != 200) {
+        throw({status:respose.status, statusText:"Error del servidor, intentelo más tarde."})
       }
       
-      throw({status:respose.status, statusText:"Error del servidor, intentelo más tarde."})
+      const data = await respose.json();
+      setData(data.data);
+      setLoading(false);
+      console.log(data.data)
+      if (data.data.length < 1) setMensaje("Anime no encontrado.");
       
     } catch (error) {
       console.log(error);

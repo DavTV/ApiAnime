@@ -51,3 +51,11 @@
   max-height: 600px;
   overflow-y: auto;
 }
+@media (min-width: 700px) {
+  .img-modal{
+      max-width: 300px !important;
+      display: block;
+      margin:auto;
+}
+
+}

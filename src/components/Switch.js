@@ -7,11 +7,8 @@ const Switch = ({ switchBtn, setWitchBtn }) => {
     setWitchBtn(!switchBtn);
     if (switchBtn) {
       document.body.className = "bg-dark";
-      // setWitchBtn(false);
     } else {
       document.body.className = "bg-light";
-
-      // setWitchBtn(true);
     }
     console.log(switchBtn);
   };
@@ -30,7 +27,6 @@ const Switch = ({ switchBtn, setWitchBtn }) => {
           ref={switchRef}
           onClick={handleSwitch}
         />
-        {/* <img src={Moon} alt="" /> */}
       </span>
     </div>
   );
